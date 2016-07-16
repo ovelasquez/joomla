@@ -1,0 +1,110 @@
+ 
+# IDE & System Related Files #
+.buildpath
+.editorconfig
+.project
+.settings
+.DS_Store
+.idea
+.directory
+
+# Local System Files (i.e. cache, logs, etc.) #
+/administrator/cache
+/administrator/logs
+/cache
+/installation/cache
+/tmp
+/configuration.php
+/.htaccess
+/web.config
+
+# Test Related Files #
+/phpunit.xml
+/tests/system/webdriver/tests/logs/
+/tests/system/servers/configdef.php
+codecept.phar
+tests/codeception/_output/*
+tests/codeception/vendor/*
+tests/codeception/testingsite*
+tests/codeception/tests/acceptance.suite.yml
+tests/codeception/tests/acceptance/*Tester.php
+tests/codeception/tests/functional/*Tester.php
+tests/codeception/tests/unit/*Tester.php
+
+# phpDocumentor Logs #
+phpdoc-*
+
+# Patch Tester #
+/administrator/components/com_patchtester
+/administrator/templates/hathor/html/com_patchtester
+/components/com_patchtester
+/media/com_patchtester
+
+# Install from Web plugin #
+/plugins/installer/webinstaller
+
+# -- Editores -----------------------------------------
+# vim
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+ 
+# eclipse
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+.externalToolBuilders/
+*.launch
+.buildpath
+ 
+# phpstorm
+.idea/
+ 
+# textmate
+*.tmproj
+*.tmproject
+tmtags
+ 
+# sublimetext
+/*.sublime-project
+*.sublime-workspace
+ 
+# netbeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+ 
+# -- Sistemas Operativos ------------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Never ignore #
+# Only apply this rule to the main repository's gitignore files
+!/.gitignore
+!/build/.gitignore
+!/tests/unit/suites/libraries/joomla/archive/.gitignore
+!/tests/unit/tmp/.gitignore
+
+# OSX #
+._*
+.Spotlight-V100
+.Trashes

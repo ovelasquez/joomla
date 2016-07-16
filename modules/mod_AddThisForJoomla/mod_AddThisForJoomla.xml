@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension type="module" version="1.7" client="site" method="upgrade">
+
+	<name>AddThis For Joomla</name>
+
+	<author>Sharif Mamdouh</author>
+
+	<creationDate>April 2012</creationDate>
+
+	<copyright>Copyright (C) 2005 - 2008 Open Source Matters. All rights reserved.</copyright>
+
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<authorEmail>info@inowweb.com</authorEmail>
+
+	<authorUrl>www.inowweb.com</authorUrl>
+
+	<version>1.0.0</version>
+
+	<description>
+
+		<![CDATA[
+
+		AddThis for Joomla!. HaveFun! http://www.inowweb.com
+
+		]]>
+
+	</description>
+
+	<files>
+
+		<filename module="mod_AddThisForJoomla">mod_AddThisForJoomla.php</filename>
+
+		<filename>1.png</filename>
+
+        <filename>2.png</filename>
+
+        <filename>3.png</filename>
+
+        <filename>4.png</filename>
+
+        <filename>5.png</filename>
+
+        <filename>6.png</filename>
+
+        <filename>7.png</filename>
+
+		<filename>8.png</filename>
+
+        <filename>9.png</filename>
+
+	</files>
+
+
+
+<config>
+
+		<fields name="params">
+
+			<fieldset name="basic">
+
+
+
+		<field name="pubKey" type="text" label="Publisher Key :" description="Enter your Publisher key if you have an account at addthis.com so you can check the analytics:"/>
+
+
+
+
+
+
+
+
+
+		<field name="moduleclass_sfx" type="text" label="module class sfx :" description=""/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- Provided button styles -->
+
+
+
+		<field name="button_style" type="radio" default="icons1" label="Button Style :" description="Choose shareThis widget version">
+			<option value="icons1"><![CDATA[ <img src="../modules/mod_AddThisForJoomla/1.png">]]></option>
+			
+			<option value="icons2"><![CDATA[ <img src="../modules/mod_AddThisForJoomla/2.png">]]></option>
+			<option value="icons3"><![CDATA[ <img src="../modules/mod_AddThisForJoomla/3.png">]]></option>
+			<option value="icons4"><![CDATA[ <img src="../modules/mod_AddThisForJoomla/4.png">]]></option>
+			<option value="icons5"><![CDATA[ <img src="../modules/mod_AddThisForJoomla/5.png">]]></option>
+			<option value="icons6"><![CDATA[ <img src="../modules/mod_AddThisForJoomla/6.png">]]></option>
+			<option value="icons7"><![CDATA[ <img src="../modules/mod_AddThisForJoomla/7.png">]]></option>
+			<option value="icons8"><![CDATA[ <img src="../modules/mod_AddThisForJoomla/8.png">]]></option>
+			<option value="icons9"><![CDATA[ <img src="../modules/mod_AddThisForJoomla/9.png">]]></option>
+        </field>
+
+
+
+			</fieldset>
+
+		</fields>
+
+
+
+	</config>
+
+
+
+</extension>
+
+
+
+
+

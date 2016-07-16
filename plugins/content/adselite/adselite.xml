@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="2.5" group="content" method="upgrade">
+	<name>Content - Ads Elite</name>
+	<author>Elite Developers</author>
+	<creationDate>August 2013</creationDate>
+	<copyright>Copyright (C) 2013 Elite Developers. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<authorEmail>admin@elitewebdev.com</authorEmail>
+	<authorUrl>www.elitewebdev.com</authorUrl>
+	<version>3.9.0</version>
+	<description><![CDATA[ <div style='color:#FFFFFF; background:#3A87AD; border:1px solid #B0DFFF; padding:10px;margin:10px; border-radius: 4px;'><div><a href='http://www.elitewebdev.com/extra/joomla/adsense-elite' target='_blank' style='color:#FFFFFF;'><h2>Ads Elite Plugin</h2> Require Ads Starter Plugin to work.<br /><br /><img src='http://www.elitewebdev.com/files/joomla/images/adsenseelite.png' alt='Ads Elite' width='110' height='79' /></a><br /><br /></div>- Access Plugin : Extensions >> Plugin Manager >> Ads Elite<br />- Copy your AdSense code to Basic Parameters<br />- Publish/Enable<br />- Save.<br /><br />( Need Help ? Report a bug ? Request a new feature ? : <a href='http://www.elitewebdev.com/contact-us' target='_blank' style='color:#FFFFFF;'>Click Here - Contact Us</a> )</div> ]]></description>
+	<files>
+		<filename plugin="adselite">adselite.php</filename>
+		<filename>index.html</filename>
+		<filename>license.txt</filename>
+		<folder>fields</folder>
+	</files>
+	<config>
+		<fields name="params" addfieldpath="plugins/content/adselite/fields">
+			<fieldset name="basic">
+				<field name="@bloc_glob2_a" type="b_bloc" start="1"/>
+					<field name="@bloc_top_a" type="b_bloc" start="1" label="Google AdSense"/>
+						<field name="adscd" type="textarea" rows="14" cols="60" default="" filter="raw" label="AdSense code" description="Paste your AdSense code here, from your AdSense account at www.adsense.com"/>	
+						<field name="@slide_asy1_a" type="b_slide" param="responsive" value="0" />
+							<field name="cdtyp" type="list" class="btn-group" default="1" label="Code Output" description="New : The asynchronous ad code is a fully asynchronous version of the AdSense ad code that offers improved web latency and a better user experience for your site’s visitors.">
+								<option value="1">Asynchronous ( Faster )</option>
+								<option value="0">Synchronous</option>
+							</field>
+						<field name="@slide_asy1_b" type="b_slide" />
+						<field name="responsive" type="radio" class="btn-group" default="0" label="Responsive Layout" description="Ad Sizes change automaticaly according used device">
+							<option value="0">JNO</option>
+							<option value="1">JYES</option>
+						</field>
+						<field name="@slide_resp_a" type="b_slide" param="responsive" value="1" />
+							<field name="@notice_slide59" type="b_bloc" class="alert alert-success" description="This will generate an Asynchronous dynamic code." var1="TABS" />
+							<field name="minwidth" type="list" class="btn-group" default="728" label="Max Ad Unit Width" description="Select Responsive Ad Unit Maximum width.">
+								<option value="125">125 px</option>
+								<option value="180">180 px</option>
+								<option value="200">200 px</option>
+								<option value="250">250 px</option>
+								<option value="300">300 px</option>
+								<option value="336">336 px</option>
+								<option value="468">468 px</option>
+								<option value="728">728 px</option>
+							</field>
+						<field name="@slide_resp_b" type="b_slide" />		
+					<field name="@bloc_top_b" type="b_bloc" end="1" />
+					<field name="@bloc_adtpto_a" type="b_bloc" start="1" label="Ad Units"/>
+						<field name="@notice_slide39" type="b_bloc" class="alert alert-success" description="&lt;h4&gt;Please pay attention !!! : &lt;/h4&gt;(Including Module/Plug-in Ad Units) You can have a max of 3 Google AdSense ad units in the same web page - Google AdSense Ad implementation policies." var1="TABS" />
+						<field name="@bloc_adtp1_a" type="b_bloc" start="1" label="Top - Article Ad Unit"/>
+							<field name="adun1" type="radio" class="btn-group" default="1" label="Top Ad Unit" description="Enable Top Ad Unit on article's top">
+									<option value="0">JDISABLED</option>
+									<option value="1">JENABLED</option>
+							</field>
+							<field name="@slide_adunbl1_a" type="b_slide" param="adun1" value="1" />
+								<field name="adsalg1" type="radio" class="btn-group" default="float:left;margin:6px 15px 2px 2px;" label="Ad Alignement" description="Select ad alignement">
+									<option value="text-align:left;">Left</option>
+									<option value="float:left;margin:6px 15px 2px 2px;">Float Left</option>
+									<option value="text-align:center;">Center</option>
+									<option value="float:right;margin:6px 2px 2px 15px;">Float Right</option>
+									<option value="text-align:right;">Right</option>
+									<option value="css">CSS</option>
+								</field>
+								<field name="@slide_css1_a" type="b_slide" param="adsalg1" value="css" />
+									<field name="acss1" type="text" default="float:left;" label="CSS Style" description="Enter a custom CSS Style"/>
+								<field name="@slide_css1_b" type="b_slide" />
+								<field name="adstp1" type="list" default="image" label="Ad type" description="Choose the ad type you would like to display on your page">
+									<option value="image">Display ads</option>
+									<option value="text">Text ads</option>
+									<option value="text_image">Text and Display ads</option>
+								</field>
+								<field name="@slide_colors1_a" type="b_slide" param="adstp1" value="text,text_image" />
+									<field name="@notice_slide51" type="b_bloc" class="alert alert-success" description="Just click on a color field to get the color picker window." var1="TABS" />
+									<field name="clborder1" type="color" default="#FFFFFF" label="Border Color" description="Border Color in HEX" size="30"/>
+									<field name="clbg1" type="color" default="#FFFFFF" label="Background Color" description="Background Color in HEX" size="30"/>
+									<field name="cllink1" type="color" default="#0088CC" label="Link Color" description="Link Color in HEX" size="30"/>
+									<field name="cltext1" type="color" default="#555555" label="Text Color" description="Text Color in HEX" size="30"/>
+									<field name="clurl1" type="color" default="#AAAAAA" label="URL Color" description="URL Color in HEX" size="30"/>
+								<field name="@slide_colors1_b" type="b_slide" />
+								<field name="adsizes1" type="radio" class="btn-group" default="0" label="Change Ad Format" description="Do you want to change your ad format ?">
+									<option value="0">JNO</option>
+									<option value="1">JYES</option>
+								</field>
+								<field name="@slide_sizes1_a" type="b_slide" param="adsizes1" value="1" />
+									<field name="@slide_notaz1_a" type="b_slide" param="responsive" value="1" />
+										<field name="@notice_slide151" type="b_bloc" class="alert alert-success" description="If you want to select a FIXED Ad Sizes, you have to disable the Responsive Layout." var1="TABS" />
+									<field name="@slide_notaz1_b" type="b_slide" />
+									<field name="@slide_az1_a" type="b_slide" param="responsive" value="0" />
+										<field name="adfrmt1" type="list" default="300x250_as" label="Ad Sizes" description="Choose the ad format and size that you would display in your page">
+											<option value=""> ===== Recommended ===== </option>
+											<option value="300x250_as">300 x 250 - Medium Rectangle</option>
+											<option value="336x280_as">336 x 280 - Large Rectangle</option>
+											<option value="728x90_as">728 x 90 - Leaderboard</option>
+											<option value="160x600_as">160 x 600 - Wide Skyscraper</option>
+											<option value="320x50_as">320 x 50 - Mobile Banner</option>
+											<option value=""> ==== Other - Horizontal ==== </option>
+											<option value="970x90_as">970 x 90 - Large Leaderboard</option>
+											<option value="468x60_as">468 x 60 - Banner</option>
+											<option value="234x60_as">234 x 60 - Half Banner</option>
+											<option value=""> ===== Other - Vertical ===== </option>
+											<option value="120x600_as">120 x 600 - Skyscraper</option>
+											<option value="120x240_as">120 x 240 - Vertical Banner</option>
+											<option value="300x600_as">300 x 600 - Large Skyscraper</option>
+											<option value=""> ===== Other - Square ===== </option>
+											<option value="250x250_as">250 x 250 - Square</option>
+											<option value="200x200_as">200 x 200 - Small Square</option>
+											<option value="180x150_as">180 x 150 - Small Rectangle</option>
+											<option value="125x125_as">125 x 125 - Button</option>
+											<option value=""> ======= Link units ======= </option>
+											<option value="728x15_0ads_al">728 x 15 - Horizontal Large</option>
+											<option value="468x15_0ads_al">468 x 15 - Horizontal Medium</option>
+											<option value="200x90_0ads_al">200 x 90 - Vertical X-Large</option>
+											<option value="180x90_0ads_al">180 x 90 - Vertical Large</option>
+											<option value="160x90_0ads_al">160 x 90 - Vertical Medium</option>
+											<option value="120x90_0ads_al">120 x 90 - Vertical Small</option>
+										</field>
+										<field name="@slide_adtxb1_a" type="b_slide" param="adfrmt1" value="" />
+											<field name="@notice_slide01" type="b_bloc" class="alert alert-error" description="&lt;h4&gt;Please select a VALID Ad Sizes&lt;/h4&gt; Or you will get the default ad sizes : 300 x 250 - Medium Rectangle" var1="TABS" />
+										<field name="@slide_adtxb1_b" type="b_slide" />		
+										<field name="@slide_text31_a" type="b_slide" param="adstp1" value="image,text_image" />
+											<field name="@slide_adtx1_a" type="b_slide" param="adfrmt1" value="320x50_as,234x60_as,120x240_as,180x150_as,125x125_as,728x15_0ads_al,468x15_0ads_al,120x90_0ads_al,160x90_0ads_al,180x90_0ads_al,200x90_0ads_al" />
+												<field name="@notice_slide1" type="b_bloc" class="alert" description="&lt;h4&gt;Please pay attention !!! : &lt;/h4&gt;This ad size cannot display Image/Rich media ads, The Ad Type you will get is Text ads ONLY, even if you choose Image/Rich media ads ad type ( Google AdSense Ad implementation policies )" var1="TABS" />
+											<field name="@slide_adtx1_b" type="b_slide" />
+											<field name="@slide_adtx21_a" type="b_slide" param="adfrmt1" value="970x90_as" />
+												<field name="@notice_slide21" type="b_bloc" class="alert" description="&lt;h4&gt;Please pay attention !!! : &lt;/h4&gt;This ad size displays ONLY Text ads as a 970 x 90 - Large Leaderboard but Image/Rich media ads JUST as a 728 x 90 - Leaderboard if there is no revelent ads ( Google AdSense Ad implementation policies )" var1="TABS" />
+											<field name="@slide_adtx21_b" type="b_slide" />
+											<field name="@slide_adtx31_a" type="b_slide" param="adfrmt1" value="300x600_as" />
+												<field name="@notice_slide31" type="b_bloc" class="alert" description="&lt;h4&gt;Please pay attention !!! : &lt;/h4&gt;This ad size displays ONLY Text ads as a 300 x 600 - Large Skyscraper but Image/Rich media ads JUST as a 160 x 600 - Wide Skyscraper if there is no revelent ads or if you put more than one Ad Unit per page ( Google AdSense Ad implementation policies )" var1="TABS" />
+											<field name="@slide_adtx31_b" type="b_slide" />
+										<field name="@slide_text31_b" type="b_slide" />										
+									<field name="@slide_az1_b" type="b_slide" />
+									<field name="@slide_text21_a" type="b_slide" param="adstp1" value="text,text_image" />
+										<field name="@bloc_txop1_a" type="b_bloc" start="1" label="Text Options"/>
+											<field name="aduift1" type="list" default="d" label="Border Corner Styles" description="Optionally Choose from one of the pre-designed Corner Styles">
+												<option value="d">Default Corners</option>
+												<option value="rc:0">Square Corners</option>
+												<option value="rc:6">Slightly Rounded Corners</option>
+												<option value="rc:10">Very Rounded Corners</option>
+											</field>
+											<field name="adgff1" type="list" default="d" label="Font family" description="Optionally Choose from one of the pre-designed Corner Styles">
+												<option value="d">Default Font</option>
+												<option value="arial">Arial</option>
+												<option value="verdana">Verdana</option>
+												<option value="times">Times New Roman</option>
+											</field>
+											<field name="adgfs1" type="list" default="d" label="Font Size" description="Optionally Choose from one of the pre-designed Corner Styles">
+												<option value="d">Default Size</option>
+												<option value="large">Large</option>
+												<option value="medium">Medium</option>
+												<option value="small">Small</option>
+											</field>
+										<field name="@bloc_txop1_b" type="b_bloc" end="1"/>
+									<field name="@slide_text21_b" type="b_slide" />
+									<field name="adchnl1" type="text" default="" label="Ad Channel (Optional)" description="Ex : 1234567890, You will need to insert your Channel number if you want to track your ad unit (Optional)"/>
+									<field name="bkud1" type="list" default="blank" label="Backup ads" description="You can set up backup ads to display a color, image, HTML page, or ad server if Google isn't able to show targeted ads. ">
+										<option value="blank">Show blank space</option>
+										<option value="url">Show other ads from another URL</option>
+										<option value="color">Fill space with a solid color</option>
+									</field>
+									<field name="@slide_gaul1_a" type="b_slide" param="bkud1" value="url" />
+										<field name="gaul1" type="URL" default="http://" label="URL" description="This is useful if you'd like to implement a clickable image as your backup ad. Or you can use any static image as your backup ad." size="30"/>
+									<field name="@slide_gaul1_b" type="b_slide" />
+									<field name="@slide_gacl1_a" type="b_slide" param="bkud1" value="color" />
+										<field name="gacl1" type="color" default="0000FF" label="Color" description="You can effectively make your ad unit disappear by matching the backup ad color to the background color of your page." size="30"/>
+									<field name="@slide_gacl1_b" type="b_slide" />
+								<field name="@slide_sizes1_b" type="b_slide" />
+								<field name="@slide_blockac51_a" type="b_slide" param="adsblkac5" value="2" />
+									<field name="adsblkac1" type="radio" class="btn-group" default="0" label="Top Ad Unit Exclude" description="Exclude Top Ad Unit from some Articles and Categories.">
+											<option value="0">JNO</option>
+											<option value="1">JYES</option>
+									</field>
+									<field name="@slide_blockac1_a" type="b_slide" param="adsblkac1" value="1" />
+										<field name="exartd1" type="text" default="" label="Articles Ids " description="Enter Articles Ids here that you want to block Top Ad Unit from. Separated by comma (,)"/>
+										<field name="excatd1" type="category" extension="com_content" multiple="true" default="" label="Categories Ids" description="Enter Categories Ids here that you want to block Top Ad Unit from. Separated by comma (,)"/>
+									<field name="@slide_blockac1_b" type="b_slide" />
+								<field name="@slide_blockac51_b" type="b_slide" />
+							<field name="@slide_adunbl1_b" type="b_slide" />
+						<field name="@bloc_adtp1_b" type="b_bloc" end="1" />
+						<field name="@bloc_adtp2_a" type="b_bloc" start="1" label="Inside - Article Ad Unit"/>
+							<field name="adun2" type="radio" class="btn-group" default="0" label="Inside Ad Unit" description="Enable Inside Ad Unit inside article">
+									<option value="0">JDISABLED</option>
+									<option value="1">JENABLED</option>
+							</field>
+							<field name="@slide_not22_a" type="b_slide" param="adun2" value="1" />
+								<field name="@notice_slidenot22" type="b_bloc" class="alert alert-success" description="&lt;strong&gt;Please pay attention !!! : &lt;/strong&gt;This ad unit will be displayed inside an article ONLY if it has more than 1 paragraph. Paragraph delimiters are &lt;.p&gt;. and &lt;./p&gt;. or &lt;.br&gt;. tags, Please select your correct delimiter or The Inside Ad Unit will be disabled." var1="TABS" />
+								<field name="deli" type="radio" class="btn-group" default="p" label="Paragraph Delimiter" description="Select your used Paragraph delimiter ">
+									<option value="p">&lt;.p&gt;.</option>
+									<option value="br">&lt;.br&gt;.</option>
+								</field>
+							<field name="@slide_not22_a" type="b_slide" param="adun2" value="1" />
+								<field name="@notice_slidenot22" type="b_bloc" class="alert alert-success" description="Please pay attention !!! : This ad unit will be displayed inside an article ONLY if it has more than 1 paragraph. Paragraph delimiters are &lt;.p&gt;. and &lt;./p&gt;. tags" var1="TABS" />
+							<field name="@slide_not22_b" type="b_slide" />
+							<field name="@slide_adunbl2_a" type="b_slide" param="adun2" value="1" />
+								<field name="adsalg2" type="radio" class="btn-group" default="float:left;margin:6px 15px 2px 2px;" label="Ad Alignement" description="Select ad alignement">
+									<option value="text-align:left;">Left</option>
+									<option value="float:left;margin:6px 15px 2px 2px;">Float Left</option>
+									<option value="text-align:center;">Center</option>	
+									<option value="float:right;margin:6px 2px 2px 15px;">Float Right</option>
+									<option value="text-align:right;">Right</option>
+									<option value="css">CSS</option>
+								</field>
+								<field name="@slide_css2_a" type="b_slide" param="adsalg2" value="css" />
+									<field name="acss2" type="text" default="float:left;" label="CSS Style" description="Enter a custom CSS Style"/>
+								<field name="@slide_css2_b" type="b_slide" />
+								<field name="adstp2" type="list" default="image" label="Ad type" description="Choose the ad type you would like to display on your page">
+									<option value="image">Display ads</option>
+									<option value="text">Text ads</option>
+									<option value="text_image">Text and Display ads</option>
+								</field>
+								<field name="@slide_colors2_a" type="b_slide" param="adstp2" value="text,text_image" />
+									<field name="@notice_slide52" type="b_bloc" class="alert alert-success" description="Just click on a color field to get the color picker window." var1="TABS" />
+									<field name="clborder2" type="color" default="#FFFFFF" label="Border Color" description="Border Color in HEX" size="30"/>
+									<field name="clbg2" type="color" default="#FFFFFF" label="Background Color" description="Background Color in HEX" size="30"/>
+									<field name="cllink2" type="color" default="#0088CC" label="Link Color" description="Link Color in HEX" size="30"/>
+									<field name="cltext2" type="color" default="#555555" label="Text Color" description="Text Color in HEX" size="30"/>
+									<field name="clurl2" type="color" default="#AAAAAA" label="URL Color" description="URL Color in HEX" size="30"/>
+								<field name="@slide_colors2_b" type="b_slide" />
+								<field name="adsizes2" type="radio" class="btn-group" default="0" label="Change Ad Format" description="Do you want to change your ad format ?">
+									<option value="0">JNO</option>
+									<option value="1">JYES</option>
+								</field>
+								<field name="@slide_sizes2_a" type="b_slide" param="adsizes2" value="1" />
+									<field name="@slide_notaz2_a" type="b_slide" param="responsive" value="1" />
+										<field name="@notice_slide152" type="b_bloc" class="alert alert-success" description="If you want to select a FIXED Ad Sizes, you have to disable the Responsive Layout." var1="TABS" />
+									<field name="@slide_notaz2_b" type="b_slide" />
+									<field name="@slide_az2_a" type="b_slide" param="responsive" value="0" />
+										<field name="adfrmt2" type="list" default="300x250_as" label="Ad Sizes" description="Choose the ad format and size that you would display in your page">
+											<option value=""> ===== Recommended ===== </option>
+											<option value="300x250_as">300 x 250 - Medium Rectangle</option>
+											<option value="336x280_as">336 x 280 - Large Rectangle</option>
+											<option value="728x90_as">728 x 90 - Leaderboard</option>
+											<option value="160x600_as">160 x 600 - Wide Skyscraper</option>
+											<option value="320x50_as">320 x 50 - Mobile Banner</option>
+											<option value=""> ==== Other - Horizontal ==== </option>	
+											<option value="970x90_as">970 x 90 - Large Leaderboard</option>
+											<option value="468x60_as">468 x 60 - Banner</option>
+											<option value="234x60_as">234 x 60 - Half Banner</option>
+											<option value=""> ===== Other - Vertical ===== </option>	
+											<option value="120x600_as">120 x 600 - Skyscraper</option>
+											<option value="120x240_as">120 x 240 - Vertical Banner</option>
+											<option value="300x600_as">300 x 600 - Large Skyscraper</option>
+											<option value=""> ===== Other - Square ===== </option>
+											<option value="250x250_as">250 x 250 - Square</option>
+											<option value="200x200_as">200 x 200 - Small Square</option>
+											<option value="180x150_as">180 x 150 - Small Rectangle</option>
+											<option value="125x125_as">125 x 125 - Button</option>
+											<option value=""> ======= Link units ======= </option>
+											<option value="728x15_0ads_al">728 x 15 - Horizontal Large</option>
+											<option value="468x15_0ads_al">468 x 15 - Horizontal Medium</option>
+											<option value="200x90_0ads_al">200 x 90 - Vertical X-Large</option>
+											<option value="180x90_0ads_al">180 x 90 - Vertical Large</option>
+											<option value="160x90_0ads_al">160 x 90 - Vertical Medium</option>
+											<option value="120x90_0ads_al">120 x 90 - Vertical Small</option>
+										</field>
+										<field name="@slide_adtxb2_a" type="b_slide" param="adfrmt2" value="" />
+											<field name="@notice_slide02" type="b_bloc" class="alert alert-error" description="&lt;h4&gt;Please select a VALID Ad Sizes&lt;/h4&gt; Or you will get the default ad sizes : 300 x 250 - Medium Rectangle" var1="TABS" />
+										<field name="@slide_adtxb2_b" type="b_slide" />			
+										<field name="@slide_text32_a" type="b_slide" param="adstp2" value="image,text_image" />
+											<field name="@slide_adtx2_a" type="b_slide" param="adfrmt2" value="320x50_as,234x60_as,120x240_as,180x150_as,125x125_as,728x15_0ads_al,468x15_0ads_al,120x90_0ads_al,160x90_0ads_al,180x90_0ads_al,200x90_0ads_al" />
+												<field name="@notice_slide2" type="b_bloc" class="alert" description="&lt;h4&gt;Please pay attention !!! : &lt;/h4&gt;This ad size cannot display Image/Rich media ads, The Ad Type you will get is Text ads ONLY, even if you choose Image/Rich media ads ad type ( Google AdSense Ad implementation policies )" var1="TABS" />
+											<field name="@slide_adtx2_b" type="b_slide" />
+											<field name="@slide_adtx22_a" type="b_slide" param="adfrmt2" value="970x90_as" />
+												<field name="@notice_slide22" type="b_bloc" class="alert" description="&lt;h4&gt;Please pay attention !!! : &lt;/h4&gt;This ad size displays ONLY Text ads as a 970 x 90 - Large Leaderboard but Image/Rich media ads JUST as a 728 x 90 - Leaderboard if there is no revelent ads ( Google AdSense Ad implementation policies )" var1="TABS" />
+											<field name="@slide_adtx22_b" type="b_slide" />
+											<field name="@slide_adtx32_a" type="b_slide" param="adfrmt2" value="300x600_as" />
+												<field name="@notice_slide32" type="b_bloc" class="alert" description="&lt;h4&gt;Please pay attention !!! : &lt;/h4&gt;This ad size displays ONLY Text ads as a 300 x 600 - Large Skyscraper but Image/Rich media ads JUST as a 160 x 600 - Wide Skyscraper if there is no revelent ads or if you put more than one Ad Unit per page ( Google AdSense Ad implementation policies )" var1="TABS" />
+											<field name="@slide_adtx32_b" type="b_slide" />
+										<field name="@slide_text32_b" type="b_slide" />										
+									<field name="@slide_az2_b" type="b_slide" />
+									<field name="@slide_text22_a" type="b_slide" param="adstp2" value="text,text_image" />
+										<field name="@bloc_txop2_a" type="b_bloc" start="1" label="Text Options"/>	
+											<field name="aduift2" type="list" default="d" label="Border Corner Styles" description="Optionally Choose from one of the pre-designed Corner Styles">
+												<option value="d">Default Corners</option>
+												<option value="rc:0">Square Corners</option>
+												<option value="rc:6">Slightly Rounded Corners</option>
+												<option value="rc:10">Very Rounded Corners</option>
+											</field>
+											<field name="adgff2" type="list" default="d" label="Font family" description="Optionally Choose from one of the pre-designed Corner Styles">
+												<option value="d">Default Font</option>
+												<option value="arial">Arial</option>
+												<option value="verdana">Verdana</option>
+												<option value="times">Times New Roman</option>
+											</field>
+											<field name="adgfs2" type="list" default="d" label="Font Size" description="Optionally Choose from one of the pre-designed Corner Styles">
+												<option value="d">Default Size</option>
+												<option value="large">Large</option>
+												<option value="medium">Medium</option>
+												<option value="small">Small</option>
+											</field>
+										<field name="@bloc_txop2_b" type="b_bloc" end="1"/>
+									<field name="@slide_text22_b" type="b_slide" />
+									<field name="adchnl2" type="text" default="" label="Ad Channel (Optional)" description="Ex : 1234567890, You will need to insert your Channel number if you want to track your ad unit (Optional)"/>
+									<field name="bkud2" type="list" default="blank" label="Backup ads" description="You can set up backup ads to display a color, image, HTML page, or ad server if Google isn't able to show targeted ads. ">
+										<option value="blank">Show blank space</option>
+										<option value="url">Show other ads from another URL</option>
+										<option value="color">Fill space with a solid color</option>
+									</field>
+									<field name="@slide_gaul2_a" type="b_slide" param="bkud2" value="url" />
+										<field name="gaul2" type="URL" default="http://" label="URL" description="This is useful if you'd like to implement a clickable image as your backup ad. Or you can use any static image as your backup ad." size="30"/>
+									<field name="@slide_gaul2_b" type="b_slide" />
+									<field name="@slide_gacl2_a" type="b_slide" param="bkud2" value="color" />
+										<field name="gacl2" type="color" default="0000FF" label="Color" description="You can effectively make your ad unit disappear by matching the backup ad color to the background color of your page." size="30"/>
+									<field name="@slide_gacl2_b" type="b_slide" />
+								<field name="@slide_sizes2_b" type="b_slide" />
+								<field name="@slide_blockac52_a" type="b_slide" param="adsblkac5" value="2" />
+									<field name="adsblkac2" type="radio" class="btn-group" default="0" label="Inside Ad Unit Exclude" description="Exclude Inside Ad Unit from some Articles and Categories.">
+											<option value="0">JNO</option>
+											<option value="1">JYES</option>
+									</field>
+									<field name="@slide_blockac2_a" type="b_slide" param="adsblkac2" value="1" />
+										<field name="exartd2" type="text" default="" label="Articles Ids " description="Enter Articles Ids here that you want to block Inside Ad Unit from. Separated by comma (,)"/>
+										<field name="excatd2" type="category" extension="com_content" multiple="true" default="" label="Categories Ids" description="Enter Categories Ids here that you want to block Inside Ad Unit from. Separated by comma (,)"/>
+									<field name="@slide_blockac2_b" type="b_slide" />
+								<field name="@slide_blockac52_b" type="b_slide" />
+							<field name="@slide_adunbl2_b" type="b_slide" />
+						<field name="@bloc_adtp2_b" type="b_bloc" end="1" />
+						<field name="@bloc_adtp3_a" type="b_bloc" start="1" label="Bottom - Article Ad Unit"/>
+							<field name="adun3" type="radio" class="btn-group" default="0" label="Bottom Ad Unit" description="Enable Bottom Ad Unit on article's bottom">
+									<option value="0">JDISABLED</option>
+									<option value="1">JENABLED</option>
+							</field>
+							<field name="@slide_adunbl3_a" type="b_slide" param="adun3" value="1" />
+								<field name="adsalg3" type="radio" class="btn-group" default="text-align:left;" label="Ad Alignement" description="Select ad alignement">
+									<option value="text-align:left;">Left</option>
+									<option value="text-align:center;">Center</option>
+									<option value="text-align:right;">Right</option>
+									<option value="css">CSS</option>
+								</field>
+								<field name="@slide_css3_a" type="b_slide" param="adsalg3" value="css" />
+									<field name="acss3" type="text" default="float:left;" label="CSS Style" description="Enter a custom CSS Style"/>
+								<field name="@slide_css3_b" type="b_slide" />
+								<field name="adstp3" type="list" default="image" label="Ad type" description="Choose the ad type you would like to display on your page">
+									<option value="image">Display ads</option>
+									<option value="text">Text ads</option>
+									<option value="text_image">Text and Display ads</option>
+								</field>
+								<field name="@slide_colors3_a" type="b_slide" param="adstp3" value="text,text_image" />
+									<field name="@notice_slide53" type="b_bloc" class="alert alert-success" description="Just click on a color field to get the color picker window." var1="TABS" />
+									<field name="clborder3" type="color" default="#FFFFFF" label="Border Color" description="Border Color in HEX" size="30"/>
+									<field name="clbg3" type="color" default="#FFFFFF" label="Background Color" description="Background Color in HEX" size="30"/>
+									<field name="cllink3" type="color" default="#0088CC" label="Link Color" description="Link Color in HEX" size="30"/>
+									<field name="cltext3" type="color" default="#555555" label="Text Color" description="Text Color in HEX" size="30"/>
+									<field name="clurl3" type="color" default="#AAAAAA" label="URL Color" description="URL Color in HEX" size="30"/>
+								<field name="@slide_colors3_b" type="b_slide" />
+								<field name="adsizes3" type="radio" class="btn-group" default="0" label="Change Ad Format" description="Do you want to change your ad format ?">
+									<option value="0">JNO</option>
+									<option value="1">JYES</option>
+								</field>
+								<field name="@slide_sizes3_a" type="b_slide" param="adsizes3" value="1" />
+									<field name="@slide_notaz3_a" type="b_slide" param="responsive" value="1" />
+										<field name="@notice_slide153" type="b_bloc" class="alert alert-success" description="If you want to select a FIXED Ad Sizes, you have to disable the Responsive Layout." var1="TABS" />
+									<field name="@slide_notaz3_b" type="b_slide" />
+									<field name="@slide_az3_a" type="b_slide" param="responsive" value="0" />
+										<field name="adfrmt3" type="list" default="300x250_as" label="Ad Sizes" description="Choose the ad format and size that you would display in your page">
+											<option value=""> ===== Recommended ===== </option>
+											<option value="300x250_as">300 x 250 - Medium Rectangle</option>
+											<option value="336x280_as">336 x 280 - Large Rectangle</option>
+											<option value="728x90_as">728 x 90 - Leaderboard</option>
+											<option value="160x600_as">160 x 600 - Wide Skyscraper</option>
+											<option value="320x50_as">320 x 50 - Mobile Banner</option>
+											<option value=""> ==== Other - Horizontal ==== </option>
+											<option value="970x90_as">970 x 90 - Large Leaderboard</option>
+											<option value="468x60_as">468 x 60 - Banner</option>
+											<option value="234x60_as">234 x 60 - Half Banner</option>
+											<option value=""> ===== Other - Vertical ===== </option>
+											<option value="120x600_as">120 x 600 - Skyscraper</option>
+											<option value="120x240_as">120 x 240 - Vertical Banner</option>
+											<option value="300x600_as">300 x 600 - Large Skyscraper</option>
+											<option value=""> ===== Other - Square ===== </option>
+											<option value="250x250_as">250 x 250 - Square</option>
+											<option value="200x200_as">200 x 200 - Small Square</option>
+											<option value="180x150_as">180 x 150 - Small Rectangle</option>
+											<option value="125x125_as">125 x 125 - Button</option>
+											<option value=""> ======= Link units ======= </option>
+											<option value="728x15_0ads_al">728 x 15 - Horizontal Large</option>
+											<option value="468x15_0ads_al">468 x 15 - Horizontal Medium</option>
+											<option value="200x90_0ads_al">200 x 90 - Vertical X-Large</option>
+											<option value="180x90_0ads_al">180 x 90 - Vertical Large</option>
+											<option value="160x90_0ads_al">160 x 90 - Vertical Medium</option>
+											<option value="120x90_0ads_al">120 x 90 - Vertical Small</option>
+										</field>
+										<field name="@slide_adtxb3_a" type="b_slide" param="adfrmt3" value="" />
+											<field name="@notice_slide03" type="b_bloc" class="alert alert-error" description="&lt;h4&gt;Please select a VALID Ad Sizes&lt;/h4&gt; Or you will get the default ad sizes : 300 x 250 - Medium Rectangle" var1="TABS" />
+										<field name="@slide_adtxb3_b" type="b_slide" />		
+										<field name="@slide_text33_a" type="b_slide" param="adstp3" value="image,text_image" />
+											<field name="@slide_adtx3_a" type="b_slide" param="adfrmt3" value="320x50_as,234x60_as,120x240_as,180x150_as,125x125_as,728x15_0ads_al,468x15_0ads_al,120x90_0ads_al,160x90_0ads_al,180x90_0ads_al,200x90_0ads_al" />
+												<field name="@notice_slide3" type="b_bloc" class="alert" description="&lt;h4&gt;Please pay attention !!! : &lt;/h4&gt;This ad size cannot display Image/Rich media ads, The Ad Type you will get is Text ads ONLY, even if you choose Image/Rich media ads ad type ( Google AdSense Ad implementation policies )" var1="TABS" />
+											<field name="@slide_adtx3_b" type="b_slide" />
+											<field name="@slide_adtx23_a" type="b_slide" param="adfrmt3" value="970x90_as" />
+												<field name="@notice_slide23" type="b_bloc" class="alert" description="&lt;h4&gt;Please pay attention !!! : &lt;/h4&gt;This ad size displays ONLY Text ads as a 970 x 90 - Large Leaderboard but Image/Rich media ads JUST as a 728 x 90 - Leaderboard if there is no revelent ads( Google AdSense Ad implementation policies )" var1="TABS" />
+											<field name="@slide_adtx23_b" type="b_slide" />
+											<field name="@slide_adtx33_a" type="b_slide" param="adfrmt3" value="300x600_as" />
+												<field name="@notice_slide33" type="b_bloc" class="alert" description="&lt;h4&gt;Please pay attention !!! : &lt;/h4&gt;This ad size displays ONLY Text ads as a 300 x 600 - Large Skyscraper but Image/Rich media ads JUST as a 160 x 600 - Wide Skyscraper if there is no revelent ads or if you put more than one Ad Unit per page ( Google AdSense Ad implementation policies )" var1="TABS" />
+											<field name="@slide_adtx33_b" type="b_slide" />
+										<field name="@slide_text33_b" type="b_slide" />										
+									<field name="@slide_az3_b" type="b_slide" />
+									<field name="@slide_text23_a" type="b_slide" param="adstp3" value="text,text_image" />
+										<field name="@bloc_txop3_a" type="b_bloc" start="1" label="Text Options"/>
+											<field name="aduift3" type="list" default="d" label="Border Corner Styles" description="Optionally Choose from one of the pre-designed Corner Styles">
+												<option value="d">Default Corners</option>
+												<option value="rc:0">Square Corners</option>
+												<option value="rc:6">Slightly Rounded Corners</option>
+												<option value="rc:10">Very Rounded Corners</option>
+											</field>
+											<field name="adgff3" type="list" default="d" label="Font family" description="Optionally Choose from one of the pre-designed Corner Styles">
+												<option value="d">Default Font</option>
+												<option value="arial">Arial</option>
+												<option value="verdana">Verdana</option>
+												<option value="times">Times New Roman</option>
+											</field>
+											<field name="adgfs3" type="list" default="d" label="Font Size" description="Optionally Choose from one of the pre-designed Corner Styles">
+												<option value="d">Default Size</option>
+												<option value="large">Large</option>
+												<option value="medium">Medium</option>
+												<option value="small">Small</option>
+											</field>
+										<field name="@bloc_txop3_b" type="b_bloc" end="1"/>
+									<field name="@slide_text23_b" type="b_slide" />
+									<field name="adchnl3" type="text" default="" label="Ad Channel (Optional)" description="Ex : 1234567890, You will need to insert your Channel number if you want to track your ad unit (Optional)"/>
+									<field name="bkud3" type="list" default="blank" label="Backup ads" description="You can set up backup ads to display a color, image, HTML page, or ad server if Google isn't able to show targeted ads. ">
+										<option value="blank">Show blank space</option>
+										<option value="url">Show other ads from another URL</option>
+										<option value="color">Fill space with a solid color</option>
+									</field>
+									<field name="@slide_gaul3_a" type="b_slide" param="bkud3" value="url" />
+										<field name="gaul3" type="URL" default="http://" label="URL" description="This is useful if you'd like to implement a clickable image as your backup ad. Or you can use any static image as your backup ad." size="30"/>
+									<field name="@slide_gaul3_b" type="b_slide" />
+									<field name="@slide_gacl3_a" type="b_slide" param="bkud3" value="color" />
+										<field name="gacl3" type="color" default="0000FF" label="Color" description="You can effectively make your ad unit disappear by matching the backup ad color to the background color of your page." size="30"/>
+									<field name="@slide_gacl3_b" type="b_slide" />	
+								<field name="@slide_sizes3_b" type="b_slide" />
+								<field name="@slide_blockac53_a" type="b_slide" param="adsblkac5" value="2" />
+									<field name="adsblkac3" type="radio" class="btn-group" default="0" label="Bottom Ad Unit Exclude" description="Exclude Bottom Ad Unit from some Articles and Categories.">
+											<option value="0">JNO</option>
+											<option value="1">JYES</option>
+									</field>
+									<field name="@slide_blockac3_a" type="b_slide" param="adsblkac3" value="1" />
+										<field name="exartd3" type="text" default="" label="Articles Ids " description="Enter Articles Ids here that you want to block Bottom Ad Unit from. Separated by comma (,)"/>
+										<field name="excatd3" type="category" extension="com_content" multiple="true" default="" label="Categories Ids" description="Enter Categories Ids here that you want to block Bottom Ad Unit from. Separated by comma (,)"/>
+									<field name="@slide_blockac3_b" type="b_slide" />
+								<field name="@slide_blockac53_b" type="b_slide" />
+							<field name="@slide_adunbl3_b" type="b_slide" />
+						<field name="@bloc_adtp3_b" type="b_bloc" end="1" />
+					<field name="@bloc_adtpto_b" type="b_bloc" end="1" />
+					<field name="@bloc_usrtp_a" type="b_bloc" start="1" label="Ad Assignment"/>	
+						<field name="usrl" type="radio" class="btn-group" default="au" label="Show Ads to" description="Select user level for ads">
+							<option value="au">All users</option>
+							<option value="nu">Guest</option>
+							<option value="ru">Registred</option>
+						</field>
+						<field name="show" type="list" multiple="true" default="" label="Exclude Views" description="Select where to exclude Ad Units, use CTRL for multiple select">
+							<option value="frontpage">Front Page</option>
+							<option value="featured">Featured</option>
+							<option value="blog">Blog</option>
+							<option value="category">Category</option>
+							<option value="categories">Categories</option>
+							<option value="archive">Archive</option>	
+							<option value="search">Search</option>
+							<option value="other">Other than Com_Content</option>
+						</field>
+						<field name="adsblkac5" type="radio" class="btn-group" default="0" label="Exclude Articles / Cats" description="Exclude all or some Ad Units from some Articles and Categories.">
+								<option value="0">JNO</option>
+								<option value="1">All Ad Units</option>
+								<option value="2">Specific Ad Unit</option>
+						</field>
+						<field name="@slide_blockac54_a" type="b_slide" param="adsblkac5" value="2" />
+							<field name="@notice_slide54" type="b_bloc" class="alert alert-success" description="3 New fields added to eatch Ad Unit Paramters, Click YES to add your Articles and Categories Ids." var1="TABS" />	
+							<field name="@slide_blockac54_b" type="b_slide" />
+						<field name="@slide_blockac5_a" type="b_slide" param="adsblkac5" value="1" />
+							<field name="exartd" type="text" default="" label="Articles Ids " description="Enter Articles Ids here that you want to block AdSense from. Separated by comma (,)"/>
+							<field name="excatd" type="category" extension="com_content" multiple="true" default="" label="Categories Ids" description="Select Categories Ids here that you want to block AdSense from. Use CTRL to select multiple Categories"/>
+						<field name="@slide_blockac5_b" type="b_slide" />
+						<field name="ssl" type="radio" class="btn-group" default="0" label="No ads if HTTPS" description="Remove ads on HTTPS pages to avoid security message on these pages">
+							<option value="0">JNO</option>
+							<option value="1">JYES</option>
+						</field>
+					<field name="@bloc_usrtp_b" type="b_bloc" end="1" />
+					<field name="@bloc_blkad_a" type="b_bloc" start="1" label="IPs block" />
+						<field name="adsblk" type="radio" class="btn-group" default="0" label="Block Ads from IPs" description="Block Ads from some IPs">
+							<option value="0">JNO</option>
+							<option value="1">JYES</option>
+							<option value="2">IPs Range</option>
+						</field>
+						<field name="@slide_block_a" type="b_slide" param="adsblk" value="1" />
+							<field name="ipb1" type="text" default="" label="IP to block 1" description="Enter an IP number here that you want to block AdSense from"/>
+							<field name="ipb2" type="text" default="" label="IP to block 2" description="Enter an IP number here that you want to block AdSense from"/>
+							<field name="ipb3" type="text" default="" label="IP to block 3" description="Enter an IP number here that you want to block AdSense from"/>
+							<field name="ipb4" type="text" default="" label="IP to block 4" description="Enter an IP number here that you want to block AdSense from"/>
+							<field name="ipb5" type="text" default="" label="IP to block 5" description="Enter an IP number here that you want to block AdSense from"/>
+						<field name="@slide_block_b" type="b_slide" />
+						<field name="@slide_blockr_a" type="b_slide" param="adsblk" value="2" />
+							<field name="@notice_slide36" type="b_bloc" class="alert alert-success" description="Enter a valide IPs Range, IP to IP in this format : IP-IP like : 192.168.1.0-192.168.80.254 " var1="TABS" />
+							<field name="iprb1" type="text" default="" label="IPs Range to block 1" description="Enter an IPs Range number here that you want to block AdSense from"/>
+							<field name="iprb2" type="text" default="" label="IPs Range to block 2" description="Enter an IPs Range number here that you want to block AdSense from"/>
+							<field name="iprb3" type="text" default="" label="IPs Range to block 3" description="Enter an IPs Range number here that you want to block AdSense from"/>
+							<field name="iprb4" type="text" default="" label="IPs Range to block 4" description="Enter an IPs Range number here that you want to block AdSense from"/>
+							<field name="iprb5" type="text" default="" label="IPs Range to block 5" description="Enter an IPs Range number here that you want to block AdSense from"/>
+						<field name="@slide_blockr_b" type="b_slide" />								
+						<field name="@slide_blockct_a" type="b_slide" param="adsblk" value="1,2" />
+							<field name="altct" type="textarea" rows="4" cols="40" default="" label="Content for bloked IPs" description="Alternate content for blocked IPs, Text or HTML" />
+						<field name="@slide_blockct_b" type="b_slide" />
+					<field name="@bloc_blkad_b" type="b_bloc" end="1" />
+				<field name="@bloc_glob2_b" type="b_bloc" end="1" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="plugin" type="hidden" default="adsense" />
+				<field name="fields" type="hidden" default="fields/bloc.php" />
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="Ads Elite Plugin Update Server">http://www.elitewebdev.com/files/joomla/extensions/adsense_elite/1/3/9/xmls/updateplg.xml</server>
+	</updateservers>
+</extension>

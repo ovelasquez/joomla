@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension
+	version="2.5"
+	type="template"
+	client="site">
+	<name>iusdatagacetas</name>
+	<creationDate>01/08/2012</creationDate>
+	<author>Pixtura Studio</author>
+	<authorEmail>info@pixturastudio.com</authorEmail>
+	<authorUrl>http://www.pixturastudio.com</authorUrl>
+	<copyright>Copyright (C) 2012. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>2.5.0</version>
+	<files>
+		<folder>html</folder>
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<filename>index.html</filename>
+		<filename>index.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>interna.php</filename>
+	</files>
+	<positions>
+	<position>position-1</position>
+    <position>position-2</position>
+	<position>position-3</position>
+    <position>position-4</position>
+    <position>position-5</position>
+	<position>position-6</position>
+    <position>position-7</position>
+	<position>position-8</position>
+    <position>position-9</position>
+    <position>position-10</position>
+    <position>position-11</position>
+    <position>position-12</position>
+	<position>position-13</position>
+    <position>position-14</position>
+    <position>position-15</position>
+    <position>position-16</position>
+    <position>position-17</position>
+    <position>position-18</position>
+    <position>position-19</position>
+    <position>position-20</position>
+    <position>position-21</position>
+    <position>position-22</position>
+    <position>position-23</position>
+    <position>position-24</position>
+    <position>position-25</position>
+    <position>position-26</position>
+    <position>position-27</position>
+	</positions>
+</extension>

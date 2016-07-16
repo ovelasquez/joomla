@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Id: ficha.xml 51 2010-11-22 01:33:21Z chdemko $ -->
+<form
+	addrulepath="/administrator/components/com_ficha/models/rules"
+>
+	<fieldset name="datosgenerales">
+		<field
+			name="id"
+			type="hidden"
+		/>
+		<field
+			name="greeting"
+			type="text"
+			label="COM_FICHA_FICHA_FIELD_GREETING_LABEL"
+			description="COM_FICHA_FICHA_FIELD_GREETING_DESC"
+			size="40"
+			class="inputbox"
+			required="true"
+			default=""
+		/>
+		<field
+			name="gaceta_txt"
+			type="text"
+			label="COM_FICHA_FICHA_FIELD_ARTID_LABEL"
+			description="COM_FICHA_FICHA_FIELD_ARTID_DESC"
+			size="40"
+			class="inputbox"
+			required="false"
+			default=""
+		/>
+		<field
+				name="catid"
+				type="category"
+				extension="com_content"
+				class="inputbox"
+				default=""
+				label="COM_FICHA_FICHA_FIELD_CATID_LABEL"
+				description="COM_FICHA_FICHA_FIELD_CATID_DESC"
+				required="false"
+				
+		>
+				<option value="0">JOPTION_SELECT_CATEGORY</option>
+		</field>
+		
+		<field
+				name="artid"
+				type="list"
+				class="inputbox"
+				default=""
+				label="COM_FICHA_FICHA_FIELD_ARTID_LABEL"
+				description="COM_FICHA_FICHA_FIELD_ARTID_DESC"
+				required="false"
+				
+		>
+				<option value="0">COM_FICHA_FICHA_FIELD_OPTION_SELECT_ARTICLE</option>
+		</field>
+		
+		<field
+			name="entemisor"
+			type="text"
+			label="COM_FICHA_FICHA_FIELD_ENTEMISOR_LABEL"
+			description="COM_FICHA_FICHA_FIELD_ENTEMISOR_DESC"
+			size="40"
+			class="inputbox"
+			required="true"
+			default=""
+		/>
+		
+		<field
+			name="norma"
+			type="text"
+			label="COM_FICHA_FICHA_FIELD_NORMA_LABEL"
+			description="COM_FICHA_FICHA_FIELD_NORMA_DESC"
+			size="40"
+			class="inputbox"
+			required="true"
+			default=""
+		/>
+		
+		<field
+			name="objeto"
+			type="text"
+			label="COM_FICHA_FICHA_FIELD_OBJETO_LABEL"
+			description="COM_FICHA_FICHA_FIELD_OBJETO_DESC"
+			size="40"
+			class="inputbox"
+			required="true"
+			default=""
+		/>
+		
+		<field
+			name="vigencia"
+			type="text"
+			label="COM_FICHA_FICHA_FIELD_VIGENCIA_LABEL"
+			description="COM_FICHA_FICHA_FIELD_VIGENCIA_DESC"
+			size="40"
+			class="inputbox"
+			required="true"
+			default=""
+		/>
+		
+		<field
+			name="derogatoria"
+			type="text"
+			label="COM_FICHA_FICHA_FIELD_DEROGATORIA_LABEL"
+			description="COM_FICHA_FICHA_FIELD_DEROGATORIA_DESC"
+			size="40"
+			class="inputbox"
+			default=""
+		/>
+		
+	</fieldset>
+	
+	<fieldset name="notas">
+
+		
+		<field
+			name="nota"
+			type="hidden"
+			default=""
+		/>
+		
+	</fieldset>
+	<fieldset name="opcionales">
+
+		<field name="created" type="calendar" label="COM_CONTENT_FIELD_CREATED_LABEL"
+			description="COM_CONTENT_FIELD_CREATED_DESC" class="inputbox" size="22"
+			format="%Y-%m-%d %H:%M:%S" filter="user_utc" />
+
+		<field name="created_by" type="user"
+			label="COM_CONTENT_FIELD_CREATED_BY_LABEL" description="COM_CONTENT_FIELD_CREATED_BY_DESC" />
+		
+		<field name="publish_up" type="calendar"
+			label="COM_CONTENT_FIELD_PUBLISH_UP_LABEL" description="COM_CONTENT_FIELD_PUBLISH_UP_DESC"
+			class="inputbox" format="%Y-%m-%d %H:%M:%S" size="22"
+			filter="user_utc" />
+	</fieldset>
+</form>
+

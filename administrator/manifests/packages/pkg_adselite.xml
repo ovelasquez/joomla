@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="2.5" method="upgrade">
+	<name>Ads Elite Package</name>
+	<author>Elite Developers</author>
+	<creationDate>August 2013</creationDate>
+	<packagename>adselite</packagename>
+	<version>3.9.0</version>
+	<url>www.elitewebdev.com</url>
+	<packager>Elite Developers Package Team</packager>
+	<packagerurl>http://www.elitewebdev.com/extra/joomla/adsense-elite</packagerurl>
+	<description><![CDATA[ <div style="color:#FFFFFF; background:#3A87AD; border:1px solid #B0DFFF; padding:10px;margin:10px; border-radius: 4px;"><div><a href="http://www.elitewebdev.com/extra/joomla/adsense-elite" target="_blank" style="color:#FFFFFF;"><h2>Ads Elite Package</h2><br /><img src="http://www.elitewebdev.com/files/joomla/images/adsenseelite.png" alt="Ads Elite" width="110" height="79" /></a><br /><br /></div>Ads Elite package : <br /> - Ads Elite Module : insert AdSense to any module position<br /> - Ads Elite Plug-in : insert AdSense inside your articles<br /> - Ads Starter Elite Plugin : required for Ads Elite Module and Plugin to work<br /> - AdSection Elite Plug-in : add Google section to your content html to increase CRT and CPC.<br /><br />( Need Help ? Report a bug ? Request a new feature ? : <a href="http://www.elitewebdev.com/contact-us" target="_blank" style="color:#FFFFFF;">Click Here - Contact Us</a> )</div> ]]></description>
+	<update>www.elitewebdev</update>
+	<files folder="adselite">
+		<file type="module" id="mod_ads_elite" client="site">mod_ads_elite390.zip</file>
+		<file type="plugin" id="adsstarterelite" group="system">plg_ads_starter_elite390.zip</file>
+		<file type="plugin" id="adselite" group="content">plg_ads_elite390.zip</file>
+		<file type="plugin" id="adsectionelite" group="content">plg_adsection_elite390.zip</file>	
+	</files>
+ </extension>
